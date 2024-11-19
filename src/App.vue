@@ -1,7 +1,34 @@
 
 <template>
   <div>
+    <div class="text-xs-center">
+      <v-badge left>
+        <template v-slot:badge>
+          <span>6</span>
+        </template>
+        <v-icon large color="grey lighten-1"> shopping_cart </v-icon>
+      </v-badge>
+
+      <v-badge color="red">
+        <template v-slot:badge>
+          <span>!</span>
+        </template>
+        <v-icon large color="grey"> mail </v-icon>
+      </v-badge>
+    </div>
+    <div>
+      <h1>Font awesome</h1>
+      <font-awesome-icon icon="coffee" />
+      <font-awesome-icon icon="home" />
+      <span class="material-icons">home</span>
+      <span class="material-icons">favorite</span>
+      <span class="material-icons">add</span>
+      <CustomIcon/>
+    </div>
+
     <h1>Card screen</h1>
+    <h2 v-highlight="'blue'">foo js kawa</h2>
+    <WatchPage />
     <div :style="{ fontSize: postFontSize + 'em' }">
       <BlogPost
         v-for="post in posts"
@@ -10,6 +37,11 @@
         :name="post.name"
         @enlarge-text="handleIncreaseSize"
       />
+    </div>
+    <h1>Routing</h1>
+    <div>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/user">Users</router-link>
     </div>
     <div class="demo">
       <button v-for="tab in tabs" :key="tab" @click="currentTab = tab">
@@ -34,7 +66,10 @@
         </template>
       </BaseLayout>
     </div>
-    
+    <h1>Layout count</h1>
+    <LifeCycle />
+    <IncrementCount class="large" />
+    <CustomDirective />
   </div>
 </template>
 
@@ -43,7 +78,9 @@ import BlogPost from "./components/BlogPost.vue";
 import HomePage from "./components/HomePage.vue";
 import ArchivePage from "./components/ArchivePage.vue";
 import AboutPage from "./components/AboutPage.vue";
-
+import LifeCycle from "./components/LifeCycle.vue";
+import IncrementCount from "./components/IncrementCount.vue";
+import CustomDirective from "./components/CustomDirective.vue";
 
 export default {
   name: "App",
@@ -52,6 +89,9 @@ export default {
     HomePage,
     ArchivePage,
     AboutPage,
+    LifeCycle,
+    IncrementCount,
+    CustomDirective,
   },
   data() {
     return {
@@ -64,7 +104,7 @@ export default {
         { id: 2, title: "Blogging with Vue", name: "name 2" },
         { id: 3, title: "Why Vue is so fun", name: "name 3" },
       ],
-      tabs: ["Home", "About", "Archived"],
+      tabs: ["Home", "About", "Archived", "Checking"],
     };
   },
   methods: {

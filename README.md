@@ -13,7 +13,23 @@ Reusability : Tái sử dụng component
 Scoped Styling : Ngăn chặn stype bị leak và conflic
 
 *3.What is props(*)
+
 Là cách truyền dữ liệu tử compoent cha xuống component con
+Composition API cung cấp 1 cách thay thế đê tạo component trong Vuejs
+v-text : bind content with element
+v-pre: dùng dể hiển thị nội dung thô
+v-once : chỉ render content lần đầu tiên
+
+*3.Rendering(*)
+
+
+*4.Teleport (*)
+la cách di chuyển content ra ngoài cây DOM giúp tạo sự linh hoạt trong việc hiển thị UI phức tạp
+
+
+
+
+
 
 
 

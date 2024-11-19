@@ -3,6 +3,7 @@
 <template>
   <div>
     <h1>Card Screen checking {{initTitle}}</h1>
+    <h2> Chichi </h2>
   </div>
 </template>
 
